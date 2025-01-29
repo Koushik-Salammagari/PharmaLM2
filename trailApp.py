@@ -136,7 +136,7 @@ if page == "Upload & Process":
             zip_file_name = uploaded_folder.name
             base_name = os.path.splitext(zip_file_name)[0]
             image_folder_updated = os.path.join(image_folder, base_name)
-            results = call_llm_for_images(image_folder_updated, mock=True)  # Set mock=True for testing
+            results = call_llm_for_images(image_folder_updated, mock=False)  # Set mock=True for testing
             combined_text = "\n\n\n".join([f"**Slide {idx + 1}:**\n{result}" for idx, result in enumerate(results)])
 
             if combined_text.strip():
